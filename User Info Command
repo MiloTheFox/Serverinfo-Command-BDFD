@@ -1,0 +1,43 @@
+$nomention
+$if[$roleName[$highestRole[$mentioned[1;yes]]]==@everyone]
+$color[#277ECD]
+$else $if[$getRoleColor[$highestRole[$mentioned[1;yes]]]==0]
+$color[000001]
+$else
+$color[#277ECD]
+$endif
+$endif
+$if[$isNumber[$message[1]]==false]
+$addField[**Höchste Rolle**;<@&$highestRole[$mentioned[1;yes]]>]
+$addField[**Admin?**;$replaceText[$replaceText[$checkCondition[$isAdmin[$mentioned[1;yes]]==true];true;<a:verified:819936191243091998>;-1];false;<a:no:819936384110428231>;-1]]
+$addField[**Bot?**;$replaceText[$replaceText[$checkCondition[$isBot[$mentioned[1;yes]]==true];true;<a:verified:819936191243091998>;-1];false;<a:no:819936384110428231>;-1]]
+$addField[**Server beigetreten am**;**$userJoined[$mentioned[1;yes]] ($replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[6]/;/01/;1;1];/02/;2;1];/03/;3;1];/04/;4;1];/05/;5;1];/06/;6;1];/07/;7;1];/08/;8;1];/09/;9;1];/10/;10;1];/11/;11;1];/12/;12;1];/13/;13;1];/14/;14;1];/15/;15;1];/16/;16;1];/17/;17;1];/18/;18;1];/19/;19;1];/20/;20;1];/21/;21;1];/22/;22;1];/23/;23;1];/24/;24;1];/25/;25;1];/26/;26;1];/27/;27;1];/28/;28;1];/29/;29;1];/30/;30;1];/31/;31;1].$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[5]/;/01/;Januar;1];/02/;Februar;1];/03/;März;1];/04/;April;1];/05/;Mai;1];/06/;Juni;1];/07/;Juli;1];/08/;August;1];/09/;September;1];/10/;Oktober;1];/11/;November;1];/12/;Dezember;1] $splitText[4])**]
+$addField[**Discord beigetreten am**;**$creationDate[$mentioned[1;yes]] ($replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[3]/;/01/;1;1];/02/;2;1];/03/;3;1];/04/;4;1];/05/;5;1];/06/;6;1];/07/;7;1];/08/;8;1];/09/;9;1];/10/;10;1];/11/;11;1];/12/;12;1];/13/;13;1];/14/;14;1];/15/;15;1];/16/;16;1];/17/;17;1];/18/;18;1];/19/;19;1];/20/;20;1];/21/;21;1];/22/;22;1];/23/;23;1];/24/;24;1];/25/;25;1];/26/;26;1];/27/;27;1];/28/;28;1];/29/;29;1];/30/;30;1];/31/;31;1].$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[2]/;/01/;Januar;1];/02/;Februar;1];/03/;März;1];/04/;April;1];/05/;Mai;1];/06/;Juni;1];/07/;Juli;1];/08/;August;1];/09/;September;1];/10/;Oktober;1];/11/;November;1];/12/;Dezember;1] $splitText[1])**]
+$addField[**User ID**;$mentioned[1;yes]]
+$thumbnail[$userAvatar[$mentioned[1;yes]]]
+$author[$username[$mentioned[1;yes]]#$discriminator[$mentioned[1;yes]]]
+$authorIcon[$userAvatar[$mentioned[1;yes]]]
+$description[<@$mentioned[1;yes]>]
+$textSplit[$creationDate[$mentioned[1;yes]]-$userJoined[$mentioned[1;yes]];-]
+$onlyIf[$isSlash==true;]
+$footer[Coded by Ohnezahn#8135]
+$addTimestamp
+$else
+$if[$isNumber[$message[1]]==true]
+$addField[**Höchste Rolle**;<@&$highestRole[$message[1]]>]
+$addField[**Admin?**;$replaceText[$replaceText[$checkCondition[$isAdmin[$message[1]]==true];true;<a:verified:819936191243091998>;-1];false;<a:no:819936384110428231>;-1]]
+$addField[**Bot?**;$replaceText[$replaceText[$checkCondition[$isBot[$message[1]]==true];true;<a:verified:819936191243091998>;-1];false;<a:no:819936384110428231>;-1]]
+$addField[**Server Beigetreten am**;**$userJoined[$message[1]] ($replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[6]/;/01/;1;1];/02/;2;1];/03/;3;1];/04/;4;1];/05/;5;1];/06/;6;1];/07/;7;1];/08/;8;1];/09/;9;1];/10/;10;1];/11/;11;1];/12/;12;1];/13/;13;1];/14/;14;1];/15/;15;1];/16/;16;1];/17/;17;1];/18/;18;1];/19/;19;1];/20/;20;1];/21/;21;1];/22/;22;1];/23/;23;1];/24/;24;1];/25/;25;1];/26/;26;1];/27/;27;1];/28/;28;1];/29/;29;1];/30/;30;1];/31/;31;1].$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[5]/;/01/;Januar;1];/02/;Februar;1];/03/;März;1];/04/;April;1];/05/;Mai;1];/06/;Juni;1];/07/;Juli;1];/08/;August;1];/09/;September;1];/10/;Oktober;1];/11/;November;1];/12/;Dezember;1] $splitText[4])**]
+$addField[**Discord beigetreten am**;**$creationDate[$message[1]] ($replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[3]/;/01/;1;1];/02/;2;1];/03/;3;1];/04/;4;1];/05/;5;1];/06/;6;1];/07/;7;1];/08/;8;1];/09/;9;1];/10/;10;1];/11/;11th;1];/12/;12;1];/13/;13;1];/14/;14;1];/15/;15;1];/16/;16;1];/17/;17;1];/18/;18;1];/19/;19;1];/20/;20;1];/21/;21;1];/22/;22;1];/23/;23;1];/24/;24;1];/25/;25th;1];/26/;26;1];/27/;27;1];/28/;28;1];/29/;29;1];/30/;30;1];/31/;31;1].$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[2]/;/01/;Januar;1];/02/;Februar;1];/03/;März;1];/04/;April;1];/05/;Mai;1];/06/;Juni;1];/07/;Juli;1];/08/;August;1];/09/;September;1];/10/;Oktober;1];/11/;November;1];/12/;Dezember;1] $splitText[1])**]
+$addField[**User ID**;$message[1]]
+$thumbnail[$userAvatar[$message[1]]]
+$author[$username[$message[1]]#$discriminator[$message[1]]]
+$authorIcon[$userAvatar[$message[1]]]
+$description[<@$message[1]>]
+$footer[Coded by Ohnezahn#8135]
+$addTimestamp
+$textSplit[$creationDate[$message[1]]-$userJoined[$message[1]];-]
+$onlyIf[$isSlash==true;]
+$endif
+$endif
+$embedSuppressErrors[Fehler aufgetreten;Es scheint so, als würde der Nutzer nicht mehr existieren oder der Nutzer ist nicht auf diesem Server;000000;;Coded by Ohnezahn#8135;$authorAvatar]
