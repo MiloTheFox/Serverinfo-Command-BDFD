@@ -1,0 +1,31 @@
+$nomention
+$argsCheck[>1;Bitte erwähne eine Rolle oder die Rollen ID]
+$suppressErrors[Bitte erwähne eine Rolle (oder die Rollen ID)]
+$if[$isNumber[$message[1]]==false]
+$color[$getRoleColor[$mentionedRoles[1]]]
+$author[$username#$discriminator[]]
+$authorIcon[$authorAvatar]
+$title[Rollen Info]
+$addField[**Seperat?**;$replaceText[$replaceText[$checkCondition[$isHoisted[$mentionedRoles[1]]==true];true;Seperat;-1];false;Nicht Seperat;-1]]
+$addField[**Erwähnbar?**;$replaceText[$replaceText[$checkCondition[$isMentionable[$mentionedRoles[1]]==true];true;Ist Erwähnbar für alle;-1];false;Ist nicht für alle Erwähnbar;-1]]
+$addField[Rollen Name: $roleName[$mentionedRoles[1]];Rollen ID: `$mentionedRoles[1]`]
+$addField[Rollen Farbe: $getRoleColor[$mentionedRoles[1]];Rollen Erstellungstag:
+**($replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[3]/;/01/;1;1];/02/;2;1];/03/;3;1];/04/;4;1];/05/;5;1];/06/;6;1];/07/;7;1];/08/;8;1];/09/;9;1];/10/;10;1];/11/;11;1];/12/;12;1];/13/;13;1];/14/;14;1];/15/;15;1];/16/;16;1];/17/;17;1];/18/;18;1];/19/;19;1];/20/;20;1];/21/;21;1];/22/;22;1];/23/;23;1];/24/;24;1];/25/;25;1];/26/;26;1];/27/;27;1];/28/;28;1];/29/;29;1];/30/;30;1];/31/;31;1].$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[2]/;/01/;Januar;1];/02/;Februar;1];/03/;März;1];/04/;April;1];/05/;Mai;1];/06/;Juni;1];/07/;Juli;1];/08/;August;1];/09/;September;1];/10/;Oktober;1];/11/;November;1];/12/;Dezember;1] $splitText[1])**]
+$addField[Rollen Position: $rolePosition[$mentionedRoles[1]];Role Ping: <@&$mentionedRoles[1]>]
+$textSplit[$creationDate[$mentionedRoles[1]]-;-]
+$else
+$if[$isNumber[$message[1]]==true]
+$color[$getRoleColor[$message[1]]]
+$author[$username#$discriminator[]]
+$authorIcon[$authorAvatar]
+$title[Rollen Info]
+$addField[**Seperat?**;$replaceText[$replaceText[$checkCondition[$isHoisted[$message[1]]==true];true;Seperat;-1];false;Nicht Seperat;-1]]
+$addField[**Erwähnbar?**;$replaceText[$replaceText[$checkCondition[$isMentionable[$message[1]]==true];true;Ist Erwähnbar für alle;-1];false;Ist nicht für alle Erwähnbar;-1]]
+$color[$getRoleColor[$message[1]]]
+$addField[Rollen Name: $roleName[$message[1]];Rollen ID: `$message[1]`;yes]
+$addField[Rollen Farbe: $getRoleColor[$message[1]];Rollen Erstellungstag:
+**($replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[3]/;/01/;1;1];/02/;2;1];/03/;3;1];/04/;4;1];/05/;5;1];/06/;6;1];/07/;7;1];/08/;8;1];/09/;9;1];/10/;10;1];/11/;11;1];/12/;12;1];/13/;13;1];/14/;14;1];/15/;15;1];/16/;16;1];/17/;17;1];/18/;18;1];/19/;19;1];/20/;20;1];/21/;21;1];/22/;22;1];/23/;23;1];/24/;24;1];/25/;25;1];/26/;26;1];/27/;27;1];/28/;28;1];/29/;29;1];/30/;30;1];/31/;31;1].$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[/$splitText[2]/;/01/;Januar;1];/02/;Februar;1];/03/;März;1];/04/;April;1];/05/;Mai;1];/06/;Juni;1];/07/;Juli;1];/08/;August;1];/09/;September;1];/10/;Oktober;1];/11/;November;1];/12/;Dezember;1] $splitText[1])**]
+$addField[Rollen Position: $rolePosition[$message[1]];Rollen Ping: <@&$message[1]>]
+$textSplit[$creationDate[$message[1]]-;-]
+$endif
+$endif
